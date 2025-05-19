@@ -6,7 +6,7 @@ public class Game {
         Scanner input = new Scanner(System.in);
 
         System.out.println("How many pencils would you like to use:");
-        int pencilNumber;
+        int pencilNumber = 0;
         //check pencil
         boolean flagInitial = true;
         while(flagInitial){ 
