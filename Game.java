@@ -6,12 +6,12 @@ public class Game {
         Scanner input = new Scanner(System.in);
 
         System.out.println("How many pencils would you like to use:");
-
+        int pencilNumber;
         //check pencil
         boolean flagInitial = true;
         while(flagInitial){ 
           try {
-              int pencilNumber = input.nextInt();
+              pencilNumber = input.nextInt();
               if (pencilNumber == 0) {
                   System.out.println("The number of pencils should be positive");
               } else if(pencilNumber < 0) {
