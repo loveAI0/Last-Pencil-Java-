@@ -13,22 +13,20 @@ public class Game {
         while(flagInitial){ 
           try {
               pencilNumber = input.nextInt();
-              flagInitial = false;
+              
               if (pencilNumber == 0) {
                   System.out.println("The number of pencils should be positive");
-                  flagInitial = true;
+                  
               } else if(pencilNumber < 0) {
                   System.out.println("The number of pencils should be numeric");
-                  flagInitial = true;
+                  
               }else {
                 flagInitial = false;
               }
           } catch (InputMismatchException e) {
               System.out.println("The number of pencils should be numeric");
                input.next();
-              flagInitial = true;
-              
-          }
+           }
           
         }
         input.nextLine();
@@ -76,19 +74,18 @@ public class Game {
                     pencilRemoved = input.nextInt();
                     int rem =  pencilRemoved;
                     
-                    if(rem == 1 || rem == 2 || rem == 3 ){
-                        pencilNumber -= pencilRemoved;
-                        flagInitial = false;
+                    if(rem <= 0 || rem > 3){
+                        System.out.println("Possible values: '1', '2' or '3'");
+                        
                     } 
                     else if(pencilNumber < pencilRemoved) {
                         System.out.println("Too many pencils were taken");
                         System.out.println("Possible values: '1', '2' or '3'");
-                        flagInitial = true;
+                        
                     }
                     else{
-                        
-                        System.out.println("Possible values: '1', '2' or '3'");
-                        flagInitial = true;
+                        pencilNumber -= rem;
+                        flagInitial = false;
                     }
                 }
                 catch (InputMismatchException e) {
@@ -101,8 +98,14 @@ public class Game {
 
             input.nextLine(); 
 
-            pencilNumber -= pencilRemoved;
+            // pencilNumber -= pencilRemoved;
             if(pencilNumber == 0){
+                if(playerToPlay.equals(player1)){
+                    System.out.println(String.format("%s won!", player2));
+                }
+                else{
+                    System.out.println(String.format("%s won!", player1));
+                }
                 flag = false;
             }
             
