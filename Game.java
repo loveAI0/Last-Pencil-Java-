@@ -70,8 +70,18 @@ public class Game {
             int pencilRemoved = 0;
             flagInitial = true;
             while(flagInitial){
-                try{ 
-                    pencilRemoved = input.nextInt();
+                try{
+                    if(playerToPlay.equals(player1)){
+                        pencilRemoved = input.nextInt();
+                        
+                    }
+                    if(playerToPlay.equals(player2)){
+                        pencilRemoved = Bot.botGamePlay(pencilNumber);
+                        System.out.println("Bot chooses: " + pencilRemoved);
+                    }
+                    
+                    
+                    
                     int rem =  pencilRemoved;
                     
                     if(rem <= 0 || rem > 3){
@@ -99,6 +109,7 @@ public class Game {
             input.nextLine(); 
 
             // pencilNumber -= pencilRemoved;
+
             if(pencilNumber == 0){
                 if(playerToPlay.equals(player1)){
                     System.out.println(String.format("%s won!", player2));
