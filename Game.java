@@ -44,7 +44,7 @@ public class Game {
             }else{
                 System.out.println(String.format("Choose between %s and %s", player1, player2));
                 
-                flagInitial = true;
+                
             }
         }
         
@@ -61,7 +61,7 @@ public class Game {
         */
        
         boolean flag = true;
-        boolean toogleFlag = true;
+        
 
         while(flag){ 
             System.out.println(String.format("%s's turn:", playerToPlay));
@@ -100,13 +100,13 @@ public class Game {
                 }
                 catch (InputMismatchException e) {
                 System.out.println("Possible values: '1', '2' or '3'");
-                input.next();
-                flagInitial = true;
+                
+                
                 }
             }
          
 
-            input.nextLine(); 
+            
 
             // pencilNumber -= pencilRemoved;
 
@@ -124,8 +124,8 @@ public class Game {
                     System.out.print("|" + " ");
             }
             System.out.println();
-            playerToPlay = toogleFlag ? player2 : player1;
-            toogleFlag = !toogleFlag;
+            playerToPlay = playerToPlay.equals(player1)? player2 : player1;
+            
           
           
         }   
